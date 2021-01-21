@@ -6,6 +6,7 @@ body {
     color: #3BEB1F;
   }
 
+
   .jumbotron-billboard {
     margin-bottom: 0px;
     opacity: 0.9;
@@ -47,4 +48,8 @@ padding-bottom:50px;*/
 
   .closeButton {
     color: #fff;
+  }
+
+  .footerColor {
+    color: #3BEB1F;
   }
