@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(52, 58, 64);
+    background-color: rgb(22, 22, 22);
   }
 
   .navButton {
@@ -22,6 +22,8 @@ body {
     left: 0;
     z-index: 1;
   }
+
+
   
   .jumbotron h2 {
     margin-top: 0;
@@ -29,8 +31,8 @@ body {
 
   .jumbotron {
     position: relative;
-    padding-top:50px;
-padding-bottom:50px;
+    /*padding-top:50px;
+padding-bottom:50px;*/
   }
 
   .jumbotron .container {
@@ -38,18 +40,7 @@ padding-bottom:50px;
     z-index: 2;
   }
 
-
-
-  /* Profile Page CSS */
-
-
-  body{
-    padding:50px;
-    
-  }
-  .wrapper{
-    width:70%;
-  }
+<<<<<<< HEAD
 
   .panel-body{
     color:rgb(255, 255, 255);
@@ -58,11 +49,12 @@ padding-bottom:50px;
 
 
 
-/* required for collapsible result page. */
+
+
+  /* for result page */
   .container{
     padding:50px;
     background:rgb(75, 75, 75);
-
   }
 
   
@@ -71,16 +63,10 @@ padding-bottom:50px;
     border:0;
   }
   .panel-title>a, .panel-title>a:active{
-
-    display:block;
-    padding:15px;
-    color:#555;
-
     background:rgb(61, 61, 61);
     display:block;
     padding:15px;
     color:rgb(255, 255, 255);
-
     font-size:16px;
     font-weight:bold;
     text-transform:uppercase;
@@ -89,12 +75,7 @@ padding-bottom:50px;
     text-decoration:none;
   }
   .panel-heading  a:before {
-
-     font-family: 'Glyphicons Halflings';
-     content: "\e114";
-
      content: "\e098";
-
      float: right;
      transition: all 0.5s;
   }
@@ -118,6 +99,4 @@ padding-bottom:50px;
   .footerColor {
     color: #3BEB1F;
   }
-
-
 
