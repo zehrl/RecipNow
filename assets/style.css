@@ -40,11 +40,10 @@ padding-bottom:50px;*/
     z-index: 2;
   }
 
-<<<<<<< HEAD
 
   .panel-body{
     color:rgb(255, 255, 255);
-    background:rgb(73, 73, 73);
+    background-color: rgb(52, 58, 64);
   }
 
 
@@ -54,7 +53,7 @@ padding-bottom:50px;*/
   /* for result page */
   .container{
     padding:50px;
-    background:rgb(75, 75, 75);
+    background-color: rgb(52, 58, 64);
   }
 
   
@@ -63,7 +62,7 @@ padding-bottom:50px;*/
     border:0;
   }
   .panel-title>a, .panel-title>a:active{
-    background:rgb(61, 61, 61);
+    background-color: rgb(52, 58, 64);
     display:block;
     padding:15px;
     color:rgb(255, 255, 255);
@@ -100,3 +99,9 @@ padding-bottom:50px;*/
     color: #3BEB1F;
   }
 
+
+/* Profile Page CSS */
+
+.card{
+  background-color: rgb(52, 58, 64);
+}
