@@ -1,9 +1,9 @@
-const users = require("./users");
+// const users = require("./users");
 
 module.exports = function (sequelize, DataTypes) {
   const Recipes = sequelize.define("Recipes", {
 
-    recipeName: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: false,
@@ -12,7 +12,7 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
 
-    recipeInstruction: {
+    ingredient: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: false,
@@ -21,23 +21,26 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
 
-    // usersId: {
-    //   type: DataTypes.INT,
-    //   allowNull: false,
-    //   unique: true,
-    //   references: {
-    //     // This is a reference to another model
-    //     model: users,
+    instruction: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: false,
+      validate: {
 
-    //     // This is the column name of the referenced model
-    //     key: 'id',
-    //   },
-    //   validate: {
-
-    //   }
-    // },
+      }
+    },
 
   });
+
+  Recipes.associate = function (models) {
+    // We're saying that a Post should belong to an Author
+    // A Post can't be created without an Author due to the foreign key constraint
+    Recipes.belongsTo(models.Users, {
+      foreignKey: {
+        allowNull: false
+      }
+    });
+  };
 
   return Recipes;
 };

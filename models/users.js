@@ -2,15 +2,15 @@
 const bcrypt = require("bcryptjs");
 
 // Creating our Users model
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   const Users = sequelize.define("Users", {
-    
+
     username: {
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
       validate: {
-        
+
       }
     },
 
@@ -24,7 +24,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       unique: false,
       validate: {
-        
+
       }
     },
 
@@ -33,7 +33,7 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       unique: false,
       validate: {
-        
+
       }
     },
 
@@ -53,9 +53,17 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-  
+
+  Users.associate = function (models) {
+    // Associating Author with Posts
+    // When an Author is deleted, also delete any associated Posts
+    Users.hasMany(models.Recipes, {
+      onDelete: "cascade"
+    });
+  };
+
   // Creating a custom method for our Users model. This will check if an unhashed password entered by the users can be compared to the hashed password stored in our database
-  Users.prototype.validPassword = function(password) {
+  Users.prototype.validPassword = function (password) {
     return bcrypt.compareSync(password, this.password);
   };
   // Hooks are automatic methods that run during various phases of the Users Model lifecycle
@@ -68,4 +76,5 @@ module.exports = function(sequelize, DataTypes) {
     );
   });
   return Users;
+
 };
