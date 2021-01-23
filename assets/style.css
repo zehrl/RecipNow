@@ -73,7 +73,6 @@ padding-bottom:50px;*/
     text-decoration:none;
   }
   .panel-heading  a:before {
-    font: bolder;
      content: "\e098";
      float: right;
      transition: all 0.5s;
