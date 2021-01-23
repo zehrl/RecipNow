@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(22, 22, 22);
+  background-color: rgb(52, 58, 64);
   }
 
   .navButton {
@@ -22,8 +22,6 @@ body {
     left: 0;
     z-index: 1;
   }
-
-
   
   .jumbotron h2 {
     margin-top: 0;
@@ -39,8 +37,6 @@ padding-bottom:50px;*/
     position: relative;
     z-index: 2;
   }
-
-<<<<<<< HEAD
 
   .panel-body{
     color:rgb(255, 255, 255);
