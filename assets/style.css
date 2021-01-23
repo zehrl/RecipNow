@@ -1,10 +1,15 @@
 body {
-    background-color: rgb(52, 58, 64);
+    background-color: rgb(22, 22, 22);
   }
 
-  .jumbotron-billboard .image {
+  .navButton {
+    color: #3BEB1F;
+  }
+
+
+  .jumbotron-billboard {
     margin-bottom: 0px;
-    opacity: 0.2;
+    opacity: 0.9;
     color: #fff;
     background: #000 url("./pictures/jumbotron3952055.jpg") top center no-repeat;
     width: 100%;
@@ -18,6 +23,8 @@ body {
     z-index: 1;
   }
 
+
+  
   .jumbotron h2 {
     margin-top: 0;
   }
@@ -44,6 +51,20 @@ padding-bottom:50px;
   }
   .wrapper{
     width:70%;
+
+
+  .panel-body{
+    color:rgb(255, 255, 255);
+    background:rgb(73, 73, 73);
+  }
+
+
+
+
+  .container{
+    padding:50px;
+    background:rgb(75, 75, 75);
+
   }
 
   
@@ -52,9 +73,16 @@ padding-bottom:50px;
     border:0;
   }
   .panel-title>a, .panel-title>a:active{
+
     display:block;
     padding:15px;
     color:#555;
+
+    background:rgb(61, 61, 61);
+    display:block;
+    padding:15px;
+    color:rgb(255, 255, 255);
+
     font-size:16px;
     font-weight:bold;
     text-transform:uppercase;
@@ -63,8 +91,12 @@ padding-bottom:50px;
     text-decoration:none;
   }
   .panel-heading  a:before {
+
      font-family: 'Glyphicons Halflings';
      content: "\e114";
+
+     content: "\e098";
+
      float: right;
      transition: all 0.5s;
   }
@@ -73,5 +105,21 @@ padding-bottom:50px;
     -moz-transform: rotate(180deg);
     transform: rotate(180deg);
   } 
+
+  .modal-content{
+    background-color: rgb(52, 58, 64);
+    color: #fff;
+    opacity: 0.95;
+  }
+
+  .closeButton {
+    color: #fff;
+  }
+
+
+  .footerColor {
+    color: #3BEB1F;
+  }
+
 
 

@@ -13,26 +13,27 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-dark">
     <div class="container-fluid">
-      <p class="navbar-brand text-white">RecipNow!</p>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <p class="navbar-brand text-white">
+      <h1 class="homeTittle">
+        <a href="" class="navButton"> Recip</a>Now!
+      </h1>
+      </p>
+
+
       <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-
-          <button type="button" class="m-2 btn btn-outline-dark text-white" data-toggle="modal"
+          <button type="button" class="m-2 btn btn-outline-dark navButton " data-toggle="modal"
             data-target="#staticBackdrop">
             Sign Up
           </button>
-       
+
           <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title" id="staticBackdropLabel">Sign Up</h1>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <h1 class="modal-title navButton" id="staticBackdropLabel">Create Your Account</h1>
+                  <button type="button" class="close closeButton" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
@@ -40,13 +41,15 @@
                   <form>
                     <div class="form-group">
                       <label for="type">User Name:</label>
-                      <input type="type" class="form-control" id="userName" aria-describedby="username" placeholder="User Name" required>
+                      <input type="type" class="form-control" id="userName" aria-describedby="username"
+                        placeholder="User Name" required>
                     </div>
 
                     <div>
                       <div class="form-group">
                         <label for="exampleInputEmail1">Email Address:</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address" required>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                          placeholder="Email Address" required>
                         <small id="emailHelp" class="form-text text-muted"></small>
                       </div>
                     </div>
@@ -54,27 +57,30 @@
                       <label for="">Password:</label>
                       <input type="password" placeholder="Password" id="password" class="form-control" required>
                       <label for="">Re-type Password:</label>
-                      <input type="password" placeholder="Confirm Password" id="confirm_password" class="form-control" required>
+                      <input type="password" placeholder="Confirm Password" id="confirm_password" class="form-control"
+                        required>
                     </div>
                     <div class="form-group">
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
                         <label class="form-check-label" for="invalidCheck">
-                          Agree to terms and conditions
+                          Agree to the
+                          <a href="" class="navButton">Terms of Service</a>
+
                         </label>
                         <div class="invalid-feedback">
                           You must agree before submitting.
                         </div>
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary pure-button pure-button-primary">Sign Up</button>
+                    <button type="submit" class="btn btn-success pure-button pure-button-primary">Sign Up</button>
                   </form>
                 </div>
               </div>
             </div>
           </div>
 
-          <button type="button" class="m-2 btn btn-outline-dark text-white" data-toggle="modal"
+          <button type="button" class="m-2 btn btn-outline-dark navButton" data-toggle="modal"
             data-target="#exampleModal">
             Log In
           </button>
@@ -84,7 +90,7 @@
             <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title" id="exampleModalLabel">Log In</h1>
+                  <h1 class="modal-title navButton" id="exampleModalLabel">Log In</h1>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
@@ -93,7 +99,8 @@
                   <form>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Email Address:</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email Address" aria-describedby="emailHelp" required>
+                      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email Address"
+                        aria-describedby="emailHelp" required>
                       <small id="emailHelp" class="form-text text-muted"></small>
                     </div>
                     <div class="form-group">
@@ -104,7 +111,7 @@
                       <input type="checkbox" class="form-check-input" id="exampleCheck1">
                       <label class="form-check-label" for="exampleCheck1">Stay logged In</label>
                     </div>
-                    <button type="submit" class="btn btn-primary pure-button pure-button-primary">Log In</button>
+                    <button type="submit" class="btn btn-success pure-button pure-button-primary">Log In</button>
                   </form>
                 </div>
               </div>
@@ -115,68 +122,73 @@
     </div>
   </nav>
 
-<!-- jumbotron -->
+  <!-- jumbotron -->
 
   <div class="jumbotron jumbotron-fluid mb-5 d-flex justify-content-center jumbotron-billboard">
-    <div class="image"></div>
     <div class="input-group  w-50 ">
-      <input class="form-control form-control-lg" type="text" placeholder="Search Recipe">
-      <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+      <input class="form-control form-control-lg" type="text" placeholder="Search Recipe Here">
+      <button class="btn btn-success" type="button" id="button-addon2">Search</button>
     </div>
   </div>
   <div class="container mb-5">
     <div class="row">
       <div class="col-sm">
         <div class="card" style="width: 18rem;">
-          <img src="./assets/pictures/chicken-616353.jpg" class="card-img-top" alt="...">
+          <a href="">
+            <img src="./assets/pictures/chicken-616353.jpg" class="card-img-top" alt="...">
+          </a>
         </div>
       </div>
       <div class="col-sm">
         <div class="card" style="width: 18rem;">
-          <img src="./assets/pictures/beef-675951.jpg" class="card-img-top" alt="...">
+          <a href="">
+            <img src="./assets/pictures/beef-675951.jpg" class="card-img-top" alt="...">
+          </a>
+
         </div>
       </div>
       <div class="col-sm">
         <div class="card" style="width: 18rem;">
-          <img src="./assets/pictures/pexels-polina-tankilevitch-4518583.jpg" class="card-img-top" alt="...">
+          <a href="">
+            <img src="./assets/pictures/pexels-polina-tankilevitch-4518583.jpg" class="card-img-top" alt="...">
+          </a>
+
         </div>
       </div>
     </div>
   </div>
+
   <div class="container">
     <div class="row">
       <div class="col-sm">
         <div class="card" style="width: 18rem;">
-          <img src="./assets/pictures/fish-1409050.jpg" class="card-img-top" alt="...">
+          <a href="">
+            <img src="./assets/pictures/fish-1409050.jpg" class="card-img-top rounded" alt="...">
+          </a>
         </div>
       </div>
       <div class="col-sm">
         <div class="card" style="width: 18rem;">
-          <img src="./assets/pictures/pork4110378.jpg" class="card-img-top" alt="...">
+          <a href="">
+            <img src="./assets/pictures/pork4110378.jpg" class="card-img-top rounded" alt="...">
+          </a>
         </div>
       </div>
       <div class="col-sm">
         <div class="card" style="width: 18rem;">
-          <img src="./assets/pictures/salad-257816.jpg" class="card-img-top" alt="...">
+          <a href="">
+            <img src="./assets/pictures/salad-257816.jpg" class="card-img-top rounded" alt="...">
+          </a>
         </div>
       </div>
-    </div> 
+    </div>
   </div>
- 
 
+  <!-- footer -->
 
   <footer class="page-footer font-small blue d-flex justify-content-center">
-
-
     <div class="footerBottom py-3">
-
-
-
-    <p class="text-white"> Made By Group Two</p>
-
-
-
-
+      <p class="footerColor"> Made by Group Two</p>
   </footer>
 
   <script src="https://code.jquery.com/jquery.js"></script>
