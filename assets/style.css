@@ -46,7 +46,7 @@ padding-bottom:50px;*/
 
 
 
-  container mb-5{
+  .container{
     padding:50px;
     background:rgb(75, 75, 75);
   }
@@ -69,8 +69,7 @@ padding-bottom:50px;*/
     text-decoration:none;
   }
   .panel-heading  a:before {
-     font-family: 'Glyphicons Halflings';
-     content: "\e114";
+     content: "\e098";
      float: right;
      transition: all 0.5s;
   }

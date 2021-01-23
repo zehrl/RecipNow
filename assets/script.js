@@ -1,19 +1,3 @@
-$('.panel-collapse').on('show.bs.collapse', function () {
-  $(this).siblings('.panel-heading').addClass('active');
-});
-
-$('.panel-collapse').on('hide.bs.collapse', function () {
-  $(this).siblings('.panel-heading').removeClass('active');
-});
-
-
-
-
-
-
-
-
-
 var password = document.getElementById("password"),
   confirm_password = document.getElementById("confirm_password");
 
@@ -38,4 +22,15 @@ $(window).load(function () {
   $('.popupCloseButton').click(function(){
       $('.hover_bkgr_fricc').hide();
   });
+});
+
+
+
+// result collapsible arrow
+$('.panel-collapse').on('show.bs.collapse', function () {
+  $(this).siblings('.panel-heading').addClass('active');
+});
+
+$('.panel-collapse').on('hide.bs.collapse', function () {
+  $(this).siblings('.panel-heading').removeClass('active');
 });
