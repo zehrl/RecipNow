@@ -25,17 +25,18 @@ $(window).load(function () {
   });
 });
 
-var loginForm
-function = 
-if (form.id.value=="/") { 
-  if (form.pass.value=="/") {              
-  location="/" 
-  } else {
-  alert("Invalid Password")
-  }
-  } else {  alert("Invalid UserID")
-  }
-  };
+
+language='javascript' type='text/javascript'>
+ var userid = "<?php echo $username; ?>";
+ if (userid==(""))
+ {
+ $('#det_logout').addClass('hide'); 
+  $('#myaccount').addClass('hide');
+   $('.divider2').addClass('hide');
+ }
+ else
+$('#det_login').addClass('hide');
+
 
 // form data base end
 
@@ -47,3 +48,4 @@ $('.panel-collapse').on('show.bs.collapse', function () {
 $('.panel-collapse').on('hide.bs.collapse', function () {
   $(this).siblings('.panel-heading').removeClass('active');
 });
+
