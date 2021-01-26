@@ -4,8 +4,6 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 const users = require("../models/users");
 
 router.get("/api/user/:id", (req, res) => {
-    // console.log(`req.params = ${req.params}`)
-    // console.log(req.params)
     db.Users.findAll({ 
     where:{
         id: req.params.id 
@@ -28,7 +26,5 @@ router.post("/api/user", (req, res) => {
         res.json(newUser);
     });
 })
-
-// bio route
 
 module.exports = router;
