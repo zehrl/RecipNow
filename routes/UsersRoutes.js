@@ -1,22 +1,24 @@
-const { Users } = require("../models");
+const db = require("../models");
 const router = require("express").Router();
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const users = require("../models/users");
 
-
-router.get("/api/user/:id",  (req, res) => {
-    Users.findAll({ 
+router.get("/api/user/:id", (req, res) => {
+    // console.log(`req.params = ${req.params}`)
+    // console.log(req.params)
+    db.Users.findAll({ 
     where:{
         id: req.params.id 
      }
-    }).then((Users, err) => {
+    }).then((data, err) => {
+        console.log(`data = ${data}`)
         if (err) throw err
-        res.json(Users);
+        res.json(data);
     })
 });
 
 router.post("/api/user", (req, res) => {
-    Users.create({
+    db.Users.create({
         username: req.user.username,
         password: req.user.password,
         firstName: req.user.firstName,
