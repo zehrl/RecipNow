@@ -18,13 +18,20 @@ router.post("/api/login", passport.authenticate("local"), (req, res) => {
 // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
 // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
 // otherwise send back an error
+
 router.post("/api/signup", (req, res) => {
-  db.User.create({
-    email: req.body.email,
-    password: req.body.password
+  console.log(req.body)
+  db.Users.create({
+    username: req.body.username,
+    password: req.body.password,
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email
   })
-    .then(() => {
-      res.redirect(307, "/api/login");
+    .then((data) => {
+      res.json(data)
+      // res.redirect(307, "/api/login");
+      // use frontend for redirects
     })
     .catch(err => {
       res.status(401).json(err);
