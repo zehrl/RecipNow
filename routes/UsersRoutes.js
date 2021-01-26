@@ -15,7 +15,6 @@ router.get("/api/user/:id",  (req, res) => {
     })
 });
 
-
 router.post("/api/user", (req, res) => {
     Users.create({
         username: req.user.username,
@@ -27,8 +26,6 @@ router.post("/api/user", (req, res) => {
         res.json(newUser);
     });
 })
-
-
 
 // bio route
 
