@@ -2,7 +2,6 @@
 const db = require("../models");
 const router = require("express").Router();
 
-
 // create recipe route
 router.post("/api/recipes", (req, res) => {
     db.Recipes.create({
@@ -10,7 +9,7 @@ router.post("/api/recipes", (req, res) => {
         ingredient: req.body.ingredient,
         instruction: req.body.instruction,
         UserId: req.body.userId
-    }).then((data, err) => {
+    }).then((data, err) => {``
         console.log(req.body)
         if (err) throw err
         res.json(data);
@@ -18,7 +17,16 @@ router.post("/api/recipes", (req, res) => {
 })
 
 // delete recipe route
-
+router.delete("/api/recipes/:id", (req, res) => {
+    db.Recipes.delete({
+        where: {
+            id: req.params.id
+        }
+    }).then((data, err) => {
+        if (err) throw err
+        res.json(data);
+    })
+})
 
 // update recipe route
 
