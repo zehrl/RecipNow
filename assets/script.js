@@ -1,3 +1,4 @@
+// form data base
 var password = document.getElementById("password"),
   confirm_password = document.getElementById("confirm_password");
 
@@ -24,7 +25,19 @@ $(window).load(function () {
   });
 });
 
+var loginForm
+function = 
+if (form.id.value=="/") { 
+  if (form.pass.value=="/") {              
+  location="/" 
+  } else {
+  alert("Invalid Password")
+  }
+  } else {  alert("Invalid UserID")
+  }
+  };
 
+// form data base end
 
 // result collapsible arrow
 $('.panel-collapse').on('show.bs.collapse', function () {
