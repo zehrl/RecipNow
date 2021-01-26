@@ -25,7 +25,7 @@
 
                     <button type="button" class=" m-2 btn btn-outline-dark  navButton">View All Recipes</button>
 
-                    <button type="button" class=" m-2 btn btn-outline-dark navButton">Log Out</button>
+                    <a href="index.html"><button class=" m-2 btn btn-outline-dark navButton">Log Out</button></a>
 
                 </div>
             </div>
@@ -76,7 +76,7 @@
 
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1" class="text-white">Ingredients:</label>
-                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control" id="exampleFormControlTextarea1 ingredients" rows="3"></textarea>
                             </div>
 
                             <div class="form-group">
@@ -84,7 +84,7 @@
                                 <textarea class="form-control  id=" exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
 
-                            <button type="button" class="btn btn-outline-success">Save</button>
+                            <button type="submit" class="btn btn-outline-success saveButton">Save</button>
                         </form>
 
 
@@ -130,6 +130,10 @@
 
                                                 </p>
 
+                                    <div class="d-flex justify-content-center">
+                                        <button type="button" class="btn btn-outline-success mr-5 mb-5">Update</button>
+                                        <button type="button" class="btn btn-outline-danger mr-5 mb-5">Delete</button>
+                                    </div>
 
                                             </div>
                                             <div class="col-sm">
@@ -144,8 +148,10 @@
                                     </div>
 
                                     <div class="d-flex justify-content-center">
-                                        <button type="button" class="btn btn-outline-success mr-5 mb-5">Update</button>
-                                        <button type="button" class="btn btn-outline-danger mr-5 mb-5">Delete</button>
+                                        <button type="button"
+                                            class="btn btn-outline-success mr-5 mb-5 updateButton">Update</button>
+                                        <button type="button"
+                                            class="btn btn-outline-danger mr-5 mb-5 deleteButton">Delete</button>
                                     </div>
 
                                 </div>
