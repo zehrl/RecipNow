@@ -6,6 +6,9 @@ body {
     color: #3BEB1F;
   }
 
+  .homeTittle {
+     color: #000;
+  }
 
   .jumbotron-billboard {
     margin-bottom: 0px;
