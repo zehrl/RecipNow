@@ -26,16 +26,6 @@ $(window).load(function () {
 });
 
 
-language='javascript' type='text/javascript'>
- var userid = "<?php echo $username; ?>";
- if (userid==(""))
- {
- $('#det_logout').addClass('hide'); 
-  $('#myaccount').addClass('hide');
-   $('.divider2').addClass('hide');
- }
- else
-$('#det_login').addClass('hide');
 
 
 // form data base end
