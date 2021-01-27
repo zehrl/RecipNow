@@ -18,7 +18,7 @@ router.post("/api/recipes", (req, res) => {
 
 // delete recipe route
 router.delete("/api/recipes/:id", (req, res) => {
-    db.Recipes.delete({
+    db.Recipes.destroy({
         where: {
             id: req.params.id
         }
@@ -29,5 +29,6 @@ router.delete("/api/recipes/:id", (req, res) => {
 })
 
 // update recipe route
+
 
 module.exports = router;
