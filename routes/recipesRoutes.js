@@ -1,5 +1,6 @@
 // Requiring our models and passport as we've configured it
 const db = require("../models");
+const users = require("../models/users");
 const router = require("express").Router();
 
 // get recipe from ID
@@ -16,12 +17,13 @@ router.get("/api/recipes/:id", (req, res) => {
     })
 })
 
-// get 10 recipes
+// get 10 recipes and return the user data from Users
 router.get("/api/recipes", (req, res) => {
     
     idCount = 10;
     
     db.Recipes.findAll({
+        include: db.Users,
         limit: idCount
     }).then((data, err) => {
         
