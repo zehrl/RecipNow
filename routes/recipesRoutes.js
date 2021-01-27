@@ -8,7 +8,8 @@ router.get("/api/recipes/:id", (req, res) => {
         where: {
             id: req.params.id
         }
-    }).then((data, err) => {``
+    }).then((data, err) => {
+        ``
         console.log(req.body)
         if (err) throw err
         res.json(data);
@@ -16,6 +17,19 @@ router.get("/api/recipes/:id", (req, res) => {
 })
 
 // get 10 recipes
+router.get("/api/recipes", (req, res) => {
+    
+    idCount = 10;
+    
+    db.Recipes.findAll({
+        limit: idCount
+    }).then((data, err) => {
+        
+        if (err) throw err
+        res.json(data);
+    
+    })
+})
 
 // create recipe route
 router.post("/api/recipes", (req, res) => {
@@ -24,8 +38,7 @@ router.post("/api/recipes", (req, res) => {
         ingredient: req.body.ingredient,
         instruction: req.body.instruction,
         UserId: req.body.userId
-    }).then((data, err) => {``
-        console.log(req.body)
+    }).then((data, err) => {
         if (err) throw err
         res.json(data);
     })
