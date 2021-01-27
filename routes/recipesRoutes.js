@@ -2,7 +2,7 @@
 const db = require("../models");
 const router = require("express").Router();
 
-// get one recipe from ID
+// get recipe from ID
 router.get("/api/recipes/:id", (req, res) => {
     db.Recipes.findAll({
         where: {
@@ -44,7 +44,7 @@ router.post("/api/recipes", (req, res) => {
     })
 })
 
-// delete recipe route
+// delete recipe by id route
 router.delete("/api/recipes/:id", (req, res) => {
     db.Recipes.destroy({
         where: {
@@ -56,7 +56,7 @@ router.delete("/api/recipes/:id", (req, res) => {
     })
 })
 
-// update recipe route
+// update recipe by id route
 
 
 module.exports = router;
