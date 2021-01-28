@@ -23,6 +23,8 @@ router.post("/api/recipes", (req, res) => {
         name: req.body.name,
         ingredient: req.body.ingredient,
         instruction: req.body.instruction,
+
+        // ***UserId should be pulled using "req.user.UserId" when login stuff is figured out***
         UserId: req.body.userId
     }).then((data, err) => {
         if (err) throw err
