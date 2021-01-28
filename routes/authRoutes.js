@@ -7,9 +7,10 @@ const passport = require("../config/passport");
 // Using the passport.authenticate middleware with our local strategy.
 // If the user has valid login credentials, send them to the members page.
 // Otherwise the user will be sent an error
-router.post("/login", passport.authenticate("local"), (req, res) => {  
-  
+router.post("/login", passport.authenticate("local"), (req, res) => {
+
   res.render('../public/views/index');
+
   // res.json({
   //   email: req.user.email,
   //   id: req.user.id
@@ -21,7 +22,7 @@ router.post("/login", passport.authenticate("local"), (req, res) => {
 // otherwise send back an error
 
 router.post("/api/signup", (req, res) => {
-  console.log(req.body)
+
   db.Users.create({
     username: req.body.username,
     password: req.body.password,
@@ -30,9 +31,7 @@ router.post("/api/signup", (req, res) => {
     email: req.body.email
   })
     .then((data) => {
-      res.json(data)
-      // res.redirect(307, "/api/login");
-      // use frontend for redirects
+      res.render("../public/views/home")
     })
     .catch(err => {
       res.status(401).json(err);
