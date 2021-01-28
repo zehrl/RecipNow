@@ -33,22 +33,6 @@ router.post("/login", passport.authenticate("local"), (req, res) => {
   });
 });
 
-
-// router.get("/api/login", (req, res) => {
-//   // If the user already has an account send them to the members page
-//   if (req.user) {
-//     res.redirect("/");
-//   } else {
-//     res.json({})
-//   };
-// });
-
-// Here we've add our isAuthenticated middleware to this route.
-// If a user who is not logged in tries to access this route they will be redirected to the signup page
-// router.get("/members", isAuthenticated, (req, res) => {
-//   res.sendFile(path.join(__dirname, "../public/members.html"));
-// });
-
 // Route for logging user out
 router.get("/logout", (req, res) => {
   req.user ? console.log("Before: User is logged in.") : console.log("Before: User is logged out.");

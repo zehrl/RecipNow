@@ -30,6 +30,8 @@ router.get("/", (req, res) => {
 
     }).then((data, err) => {
         if (err) throw err
+
+        // ***need to format "data" correctly to be able to use with templates***
         res.render("home", data)
     })
 });
@@ -42,19 +44,13 @@ router.get("/account", isAuthenticated, (req, res) => {
         console.log("Redirecting to signup...")
         res.render("signup")
     } else {
-        // Otherwise send back the user's email and id
-        // Sending back a password, even a hashed password, isn't a good idea
-        
+
         console.log("Redirecting to profile of user...")
 
         const username = req.user.username;
 
+        // If logged in, redirect to user profile
         res.redirect(`/profile/${username}`);
-
-        // res.json({
-        //     email: req.user.email,
-        //     id: req.user.id
-        // });
     }
 });
 
@@ -63,18 +59,31 @@ router.get("/signup", (req, res) => {
     res.render("signup")
 });
 
-// router.get("/login", (req, res) => {
-//   // If the user already has an account send them to the members page
-//   if (req.user) {
-//     res.redirect("/members");
-//   }
-//   res.sendFile(path.join(__dirname, "../public/login.html"));
-// });
+// Route for showing profile of a given user
+router.get("/profile/:username", (req, res) => {
+    db.Users.findAll({
+        attributes: [
+            "username",
+            "firstName",
+            "lastName"
+        ],
+        where: {
+            username: req.params.username
+        },
+        include: {
+            model: db.Recipes,
+            attributes: [
+                "name",
+                "ingredient",
+                "instruction",
+                "createdAt"
+            ],
+        }
+    }).then((data, err) => {
 
-// // Here we've add our isAuthenticated middleware to this route.
-// // If a user who is not logged in tries to access this route they will be redirected to the signup page
-// router.get("/members", isAuthenticated, (req, res) => {
-//   res.sendFile(path.join(__dirname, "../public/members.html"));
-// });
+        // ***need to format "data" correctly to be able to use with templates***
+        res.render("profile", data)
+    })
+});
 
 module.exports = router;

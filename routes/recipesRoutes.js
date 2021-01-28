@@ -17,37 +17,6 @@ router.get("/api/recipes/:id", (req, res) => {
     })
 })
 
-// get 10 recipes and return the user data from Users
-router.get("/api/recipes", (req, res) => {
-
-    idCount = 10;
-
-    db.Recipes.findAll({
-        attributes: [
-            "id",
-            "name",
-            "ingredient",
-            "instruction",
-            "createdAt"
-        ],
-        include: {
-            model: db.Users,
-            attributes: [
-                "id",
-                "username",
-                "firstName",
-                "lastName"
-            ]
-        }
-
-    }).then((data, err) => {
-
-        if (err) throw err
-        res.json(data);
-
-    })
-})
-
 // create recipe route
 router.post("/api/recipes", (req, res) => {
     db.Recipes.create({
