@@ -2,26 +2,12 @@
 const db = require("../models");
 const router = require("express").Router();
 const passport = require("../config/passport");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
+const { route } = require("./hbsRoutes");
+const { nextTick } = require("process");
 
-
-// Using the passport.authenticate middleware with our local strategy.
-// If the user has valid login credentials, send them to the members page.
-// Otherwise the user will be sent an error
-// router.post("/login", passport.authenticate("local"), (req, res) => {
-
-//   res.render('../public/views/index');
-
-//   // res.json({
-//   //   email: req.user.email,
-//   //   id: req.user.id
-//   // });
-// });
-
-// Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
-// how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
-// otherwise send back an error
-
-router.post("/api/signup", (req, res) => {
+// Route to signup
+router.post("/signup", (req, res) => {
 
   db.Users.create({
     username: req.body.username,
@@ -38,25 +24,34 @@ router.post("/api/signup", (req, res) => {
     });
 });
 
-router.get("/login", (req, res) => {
-  // If the user already has an account send them to the members page
-  if (req.user) {
-    res.redirect("/members");
-  }
-  res.sendFile(path.join(__dirname, "../public/login.html"));
-});
+// Route to login
+router.post("/login",
+  passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: "/signup"
+  })
+)
+
+// router.get("/api/login", (req, res) => {
+//   // If the user already has an account send them to the members page
+//   if (req.user) {
+//     res.redirect("/");
+//   } else {
+//     res.json({})
+//   };
+// });
 
 // Here we've add our isAuthenticated middleware to this route.
 // If a user who is not logged in tries to access this route they will be redirected to the signup page
-router.get("/members", isAuthenticated, (req, res) => {
-  res.sendFile(path.join(__dirname, "../public/members.html"));
-});
+// router.get("/members", isAuthenticated, (req, res) => {
+//   res.sendFile(path.join(__dirname, "../public/members.html"));
+// });
 
-// Route for logging user out
-router.get("/logout", (req, res) => {
-  req.logout();
-  res.redirect("/");
-});
+// // Route for logging user out
+// router.get("/logout", (req, res) => {
+//   req.logout();
+//   res.redirect("/");
+// });
 
 // Route for getting some data about our user to be used client side
 router.get("/api/user_data", (req, res) => {

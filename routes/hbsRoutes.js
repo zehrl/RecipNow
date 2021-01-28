@@ -58,6 +58,11 @@ router.get("/account", isAuthenticated, (req, res) => {
     }
 });
 
+// Route for signing up
+router.get("/signup", (req, res) => {
+    res.render("signup")
+});
+
 // router.get("/login", (req, res) => {
 //   // If the user already has an account send them to the members page
 //   if (req.user) {
