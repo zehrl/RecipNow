@@ -37,16 +37,16 @@ router.get("/", (req, res) => {
 });
 
 // Route when clicking on "account" button
+// Checks if user is signed in using "isAuthenticated"
 router.get("/account", isAuthenticated, (req, res) => {
     if (!req.user) {
-        // The user is not logged in, send back an empty object
-        //   res.json({});
+        
+        // The user is not logged in, redirect to signup route
         console.log("Redirecting to signup...")
-        res.render("signup")
+        res.redirect("/signup")
     } else {
 
         console.log("Redirecting to profile of user...")
-
         const username = req.user.username;
 
         // If logged in, redirect to user profile
@@ -55,11 +55,13 @@ router.get("/account", isAuthenticated, (req, res) => {
 });
 
 // Route for signing up
+// Simple redirect to the signup handlebars
 router.get("/signup", (req, res) => {
     res.render("signup")
 });
 
 // Route for showing profile of a given user
+// Returns data of user and all recipes of user
 router.get("/profile/:username", (req, res) => {
     db.Users.findAll({
         attributes: [

@@ -27,15 +27,15 @@ app.use(passport.session());
 const authRoutes = require("./routes/authRoutes");
 const hbsRoutes = require("./routes/hbsRoutes");
 // const htmlRoutes = require("./routes/htmlRoutes");
-// const recipesRoutes = require("./routes/recipesRoutes");
-// const usersRoutes = require("./routes/usersRoutes");
+const recipesRoutes = require("./routes/recipesRoutes");
+const usersRoutes = require("./routes/usersRoutes");
 
 app.use(
   authRoutes,
-  hbsRoutes
+  hbsRoutes,
   // htmlRoutes,
-  // recipesRoutes,
-  // usersRoutes
+  recipesRoutes,
+  usersRoutes
 );
 
 // Setup server for handlebars

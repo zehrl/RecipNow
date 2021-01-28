@@ -43,6 +43,19 @@ router.delete("/api/recipes/:id", (req, res) => {
 })
 
 // update recipe by id route
+router.put("/api/recipes", (req, res) => {
 
+    db.Recipes.update({
+        ingredient: req.body.ingredients,
+        instruction: req.body.instructions
+    }, {
+        where: {
+            id: req.body.id
+        }
+    }).then((data, err) => {
+        if (err) throw err
+        res.json(data);
+    })
+})
 
 module.exports = router;
