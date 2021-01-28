@@ -25,12 +25,14 @@ router.post("/signup", (req, res) => {
 });
 
 // Route to login
-router.post("/login",
-  passport.authenticate('local', {
-    successRedirect: '/',
-    failureRedirect: "/signup"
-  })
-)
+router.post("/login", passport.authenticate("local"), (req, res) => {
+  // Sending back a password, even a hashed password, isn't a good idea
+  res.json({
+    email: req.user.email,
+    id: req.user.id
+  });
+});
+
 
 // router.get("/api/login", (req, res) => {
 //   // If the user already has an account send them to the members page
@@ -47,11 +49,13 @@ router.post("/login",
 //   res.sendFile(path.join(__dirname, "../public/members.html"));
 // });
 
-// // Route for logging user out
-// router.get("/logout", (req, res) => {
-//   req.logout();
-//   res.redirect("/");
-// });
+// Route for logging user out
+router.get("/logout", (req, res) => {
+  req.user ? console.log("Before: User is logged in.") : console.log("Before: User is logged out.");
+  req.logout();
+  res.redirect("/");
+  req.user ? console.log("After: User is still logged in") : console.log("After: User is now logged out.");
+});
 
 // Route for getting some data about our user to be used client side
 router.get("/api/user_data", (req, res) => {
