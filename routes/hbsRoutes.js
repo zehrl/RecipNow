@@ -30,8 +30,32 @@ router.get("/", (req, res) => {
 
     }).then((data, err) => {
         if (err) throw err
-        res.render("home")
+        res.render("home", data)
     })
+});
+
+// Route when clicking on "account" button
+router.get("/account", isAuthenticated, (req, res) => {
+    if (!req.user) {
+        // The user is not logged in, send back an empty object
+        //   res.json({});
+        console.log("Redirecting to signup...")
+        res.render("signup")
+    } else {
+        // Otherwise send back the user's email and id
+        // Sending back a password, even a hashed password, isn't a good idea
+        
+        console.log("Redirecting to profile of user...")
+
+        const username = req.user.username;
+
+        res.redirect(`/profile/${username}`);
+
+        // res.json({
+        //     email: req.user.email,
+        //     id: req.user.id
+        // });
+    }
 });
 
 // router.get("/login", (req, res) => {
