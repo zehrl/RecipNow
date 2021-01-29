@@ -22,17 +22,4 @@ router.get("/api/users/:id", (req, res) => {
     })
 });
 
-// This route is obselete, but we are keeping it just in case
-// router.post("/api/user", (req, res) => {
-//     db.Users.create({
-//         username: req.user.username,
-//         password: req.user.password,
-//         firstName: req.user.firstName,
-//         lastName: req.user.lastName,
-//         email: req.user.email
-//     }).then(newUser => {
-//         res.json(newUser);
-//     });
-// })
-
 module.exports = router;

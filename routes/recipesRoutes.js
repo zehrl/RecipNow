@@ -17,43 +17,14 @@ router.get("/api/recipes/:id", (req, res) => {
     })
 })
 
-// get 10 recipes and return the user data from Users
-router.get("/api/recipes", (req, res) => {
-
-    idCount = 10;
-
-    db.Recipes.findAll({
-        attributes: [
-            "id",
-            "name",
-            "ingredient",
-            "instruction",
-            "createdAt"
-        ],
-        include: {
-            model: db.Users,
-            attributes: [
-                "id",
-                "username",
-                "firstName",
-                "lastName"
-            ]
-        }
-
-    }).then((data, err) => {
-
-        if (err) throw err
-        res.json(data);
-
-    })
-})
-
 // create recipe route
 router.post("/api/recipes", (req, res) => {
     db.Recipes.create({
         name: req.body.name,
         ingredient: req.body.ingredient,
         instruction: req.body.instruction,
+
+        // ***UserId should be pulled using "req.user.UserId" when login stuff is figured out***
         UserId: req.body.userId
     }).then((data, err) => {
         if (err) throw err
@@ -74,6 +45,19 @@ router.delete("/api/recipes/:id", (req, res) => {
 })
 
 // update recipe by id route
+router.put("/api/recipes", (req, res) => {
 
+    db.Recipes.update({
+        ingredient: req.body.ingredients,
+        instruction: req.body.instructions
+    }, {
+        where: {
+            id: req.body.id
+        }
+    }).then((data, err) => {
+        if (err) throw err
+        res.json(data);
+    })
+})
 
 module.exports = router;

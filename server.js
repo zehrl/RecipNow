@@ -25,13 +25,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 const authRoutes = require("./routes/authRoutes");
-const htmlRoutes = require("./routes/htmlRoutes");
+const hbsRoutes = require("./routes/hbsRoutes");
 const recipesRoutes = require("./routes/recipesRoutes");
 const usersRoutes = require("./routes/usersRoutes");
 
 app.use(
   authRoutes,
-  htmlRoutes,
+  hbsRoutes,
   recipesRoutes,
   usersRoutes
 );
