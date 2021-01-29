@@ -26,18 +26,43 @@ router.get("/profile", isAuthenticated, (req, res) => {
 
         // find data of user that is logged in & all recipes associated with the account
         db.Users.findAll({
-
+            attributes: [
+                "username",
+                "firstName",
+                "lastName"
+            ],
             where: {
                 username: req.user.username
             },
-            attributes
+            include: {
+                model: db.Recipes,
+                attributes: [
+                    "name",
+                    "ingredient",
+                    "instruction",
+                    "createdAt"
+                ],
+            }
 
         }).then((data, err) => {
 
             // If logged in, render profile.handlebars with data of user & recipes
-            console.log("Redirecting to account/recipe creation page...")
-            res.json(data)
-            res.render("profile", data)
+            
+            // Troubleshooting on Postman
+            // console.log("Redirecting to account/recipe creation page...")
+            // res.json(data)
+
+            hbsData = {
+                username: data[0].username,
+                firstName: data[0].firstName,
+                lastName: data[0].lastName,
+                recipes: data[0].Recipes
+            }
+
+            // Troubleshooting
+            // res.json(hbsData)
+            
+            res.render("profile", hbsData)
 
         })
     }
