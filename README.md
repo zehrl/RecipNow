@@ -5,7 +5,6 @@
 - [Licence](#Licence)
 - [Run the app](#test)
 - [Contributing](#Contributing)
-- [Demo Video](#Project-Demo-Video)
 - [Credits](#Credits)
 - [Questions](#Questions)
 
@@ -31,9 +30,7 @@ A work in progress. And the possibilities are endless. <br> Please feel free to 
 
 ## Test
 Insert Link here
-## Project Demo Video
 
-https://www.youtube.com/watch?v=ALZZx1xmAzg&ab_channel=TheITCrowd
 ## Credits
 Hat tip to 
 * Valentina Decyatnik
