@@ -108,3 +108,7 @@ padding-bottom:50px;*/
 .card{
   background-color: rgb(52, 58, 64);
 }
+
+img {
+  border-radius: 50%;
+}
