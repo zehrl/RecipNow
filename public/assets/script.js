@@ -25,7 +25,15 @@ $(window).load(function () {
   });
 });
 
-
+App.NavbarController = Ember.ArrayController.extend({
+  isAuthenticated: false,
+  login: function() {
+    this.set('isAuthenticated', true);
+  },
+  logout: function() {
+    this.set('isAuthenticated', false);
+  }
+});
 
 
 // form data base end
@@ -38,4 +46,5 @@ $('.panel-collapse').on('show.bs.collapse', function () {
 $('.panel-collapse').on('hide.bs.collapse', function () {
   $(this).siblings('.panel-heading').removeClass('active');
 });
+
 
