@@ -53,7 +53,7 @@ padding-bottom:50px;*/
 
 
 
-  /* for result page */
+  /* for result page. */
   .container{
     padding:50px;
     background-color: rgb(52, 58, 64);
@@ -88,7 +88,7 @@ padding-bottom:50px;*/
   } 
 
   .modal-content{
-    background-color: rgb(52, 58, 64);
+    background-color: rgb(45, 50, 54);
     color: #fff;
     opacity: 0.95;
   }
