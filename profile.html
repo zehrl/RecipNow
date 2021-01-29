@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
         integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="./public/assets/style.css">
 </head>
 
 <body>
@@ -22,8 +22,11 @@
             <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
 
-                    <button type="button" class=" m-2 btn btn-outline-dark  navButton">View All Recipes</button>
-
+                   
+                    <a href="#">
+                        <img alt="profilepic" src="./public/assets/pictures/avatar-gratuit.png"
+                        width="75" height="50">
+                     </a>
                     <a href="index.html"><button class=" m-2 btn btn-outline-dark navButton">Log Out</button></a>
 
                 </div>
@@ -31,39 +34,12 @@
         </div>
     </nav>
 
-    <div class="container-fluid">
-        <div class="row flex-column">
-            <div class="col">
-
-                <div class="card mt-3">
-                    <div class="card-body">
-
-                        <div class="container">
-                            <div class="row">
-                                <div class="col">
-                                    <h1 id="?">{{Name}}</1>
-                                        <h1 id="?">{{Username}}</h1>
-                                        <div class="row">
-                                            <h3 class="col">
-                                                About Me
-                                                <p id="?">
-                                                    {About me}
-                                                </p>
-                                            </h3>
-                                        </div>
-
-                                </div>
-                                <div class="col">
-                                    <img src="./assets/pictures/avatar-gratuit.png" class="card-img-top rounded-circle">
-                                </div>
-                            </div>
-                        </div>
+    
 
 
 
 
-                    </div>
-                </div>
+                
 
 
                 <div class="card mt-3">
@@ -73,6 +49,10 @@
                         <form>
 
 
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1" class="text-white">Recipe Name:</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1 ingredients" rows="1"></textarea>
+            </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1" class="text-white">Ingredients:</label>
                                 <textarea class="form-control" id="exampleFormControlTextarea1 ingredients"
@@ -81,7 +61,7 @@
 
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1" class="text-white">Instructions:</label>
-                                <textarea class="form-control  id=" exampleFormControlTextarea1" rows="3"></textarea>
+                                <textarea class="form-control"  id=" exampleFormControlTextarea1" rows="3"></textarea>
                             </div>
 
                             <button type="submit" class="btn btn-outline-success saveButton">Save</button>
@@ -113,7 +93,7 @@
                                 <h4 class="panel-title">
                                     <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
                                         aria-expanded="true" aria-controls="collapseOne">
-                                        Collapsible Group Item #1
+                                        {{recipename}}
                                     </a>
                                 </h4>
                             </div>
