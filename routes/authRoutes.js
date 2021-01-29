@@ -19,6 +19,7 @@ router.post("/signup", (req, res) => {
     .then((data) => {
 
       // ***need to format "data" correctly to be able to use with templates***
+      
       res.render("home", data)
     })
     .catch(err => {
