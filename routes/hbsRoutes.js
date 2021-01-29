@@ -8,9 +8,7 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 // Home Page HBS Route
 router.get("/", (req, res) => {
-
-    res.render("signup");
-
+    req.user ? res.render("home") : res.render("signup");
 });
 
 // Profile HBS Route
@@ -46,7 +44,8 @@ router.get("/profile", isAuthenticated, (req, res) => {
 
         }).then((data, err) => {
 
-            hbsData = {
+            // Parse data from database into handlebars friendly object
+            const hbsData = {
                 username: data[0].username,
                 firstName: data[0].firstName,
                 lastName: data[0].lastName,
