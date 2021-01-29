@@ -7,20 +7,6 @@ const { Op } = require("sequelize");
 
 // ------------ Recipes CRUD Routes ------------
 
-// // get recipe from ID
-// router.get("/api/recipes/:id", (req, res) => {
-//     db.Recipes.findAll({
-//         where: {
-//             id: req.params.id
-//         }
-//     }).then((data, err) => {
-//         ``
-//         console.log(req.body)
-//         if (err) throw err
-//         res.json(data);
-//     })
-// })
-
 // create recipe route
 // user must be logged into account and only adds recipe for the signed in user
 router.post("/api/recipes", isAuthenticated, (req, res) => {
@@ -76,18 +62,34 @@ router.get(("/api/search"), (req, res) => {
     console.log(req.query.search)
 
     db.Recipes.findAll({
+        attributes: [
+            "name",
+            "ingredient",
+            "instruction",
+            "createdAt"
+        ],
 
-        // search recipes table like query search variable
+        // search recipes table using "like" operation in the recipe column of recipes table
         where: {
-            
-            // id: "7"
+
             ingredient:
             {
                 [Op.like]: `%${req.query.search}%`
             }
+        },
+
+        include: {
+            model: db.Users,
+            attributes: [
+                "username",
+                "firstName",
+                "lastName"
+            ],
         }
 
     }).then((data, err) => {
+        
+        // change to res.render with correctly structured object for handlebars
         err ? res.json(err) : res.json(data)
     })
 
