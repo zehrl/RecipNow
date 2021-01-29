@@ -79,33 +79,22 @@ router.get(("/search"), (req, res) => {
             }
         },
 
-        // include: {
-        //     model: db.Users,
-        //     attributes: [
-        //         "username",
-        //         "firstName",
-        //         "lastName"
-        //     ],
-        // }
+        include: {
+            model: db.Users,
+            attributes: [
+                "username",
+                "firstName",
+                "lastName"
+            ],
+        }
 
     }).then((data, err) => {
-
-        // change to res.render with correctly structured object for handlebars
-        // err ? res.json(err) : res.json(data)
 
         if (err) {
             res.json(err)
         } else {
 
-            // if query is succesful, render homepage/signup and return query results
-            // queryResults = {
-            //     results: data
-            // }
-
-            // data.forEach(element => {
-            //     console.log(element.dataValues)
-            // });
-
+            // change sequalize object into handlebars friendly object
             const hbsData = data.map(element => {
                 return element.dataValues
             });
@@ -113,9 +102,7 @@ router.get(("/search"), (req, res) => {
             // console.log("data = ", data)
             console.log("hbsData = ", hbsData)
 
-
             res.render("signup", { results: hbsData })
-            // res.json(data)
         }
     })
 

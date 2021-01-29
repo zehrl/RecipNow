@@ -135,7 +135,7 @@
   <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
     <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id=`heading{{id}}`>
+      <div class="panel-heading" role="tab" id="heading{{id}}">
         <h4 class="panel-title">
           <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse{{id}}"
             aria-expanded="false" aria-controls="collapse{{id}}">
@@ -149,15 +149,13 @@
         <div class="card card-body" style="background-color: rgb(212, 212, 212);">
           <h5>ingredients</h5>
           <p>
-            {{!-- {{this.ingredient}} --}}
-            test ingredient
+            {{this.ingredient}}
           </p>
         </div>
         <div class="card card-body" style="background-color: rgb(212, 212, 212);">
           <h5>Directions</h5>
           <p>
-            {{!-- {{this.instruction}} --}}
-            test instruction
+            {{this.instruction}}
           </p>
         </div>
       </div>

@@ -9,7 +9,7 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 // Home Page HBS Route
 router.get("/", (req, res) => {
 
-    res.render("home");
+    res.render("signup");
 
 });
 
