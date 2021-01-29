@@ -44,6 +44,7 @@ router.get("/profile", isAuthenticated, (req, res) => {
 });
 
 // Signup HBS Route
+
 router.get("/signup", (req, res) => {
     res.render("signup")
 });

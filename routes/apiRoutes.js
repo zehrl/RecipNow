@@ -5,19 +5,19 @@ const router = require("express").Router();
 
 // ------------ Recipes CRUD Routes ------------
 
-// get recipe from ID
-router.get("/api/recipes/:id", (req, res) => {
-    db.Recipes.findAll({
-        where: {
-            id: req.params.id
-        }
-    }).then((data, err) => {
-        ``
-        console.log(req.body)
-        if (err) throw err
-        res.json(data);
-    })
-})
+// // get recipe from ID
+// router.get("/api/recipes/:id", (req, res) => {
+//     db.Recipes.findAll({
+//         where: {
+//             id: req.params.id
+//         }
+//     }).then((data, err) => {
+//         ``
+//         console.log(req.body)
+//         if (err) throw err
+//         res.json(data);
+//     })
+// })
 
 // create recipe route
 router.post("/api/recipes", (req, res) => {
@@ -35,10 +35,10 @@ router.post("/api/recipes", (req, res) => {
 })
 
 // delete recipe by id route
-router.delete("/api/recipes/:id", (req, res) => {
+router.delete("/api/recipes/", (req, res) => {
     db.Recipes.destroy({
         where: {
-            id: req.params.id
+            id: req.body.id
         }
     }).then((data, err) => {
         if (err) throw err
