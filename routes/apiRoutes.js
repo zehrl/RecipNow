@@ -3,6 +3,7 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 const db = require("../models");
 const users = require("../models/users");
 const router = require("express").Router();
+const { Op } = require("sequelize");
 
 // ------------ Recipes CRUD Routes ------------
 
@@ -70,7 +71,27 @@ router.put("/api/recipes", (req, res) => {
 // ------------ Search Route(s) ------------
 
 // Search query for recipe name & ingredients?
+router.get(("/api/search"), (req, res) => {
 
+    console.log(req.query.search)
+
+    db.Recipes.findAll({
+
+        // search recipes table like query search variable
+        where: {
+            
+            // id: "7"
+            ingredient:
+            {
+                [Op.like]: `%${req.query.search}%`
+            }
+        }
+
+    }).then((data, err) => {
+        err ? res.json(err) : res.json(data)
+    })
+
+})
 
 
 module.exports = router;
