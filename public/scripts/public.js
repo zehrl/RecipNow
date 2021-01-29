@@ -19,12 +19,7 @@ $(function() {
     });
   });
 
-
-
-
-
-
-  $("#updateButton").on("click", function(event){
+  $("#updateButton").on("click", function(event) {
     event.preventDefault();
 
     var id = $(this).data("id");
@@ -36,13 +31,6 @@ $(function() {
       location.reload();
     });
   });
-
-
-
-
-
-
-
 
   $("#deleteButton").on("click", function(event) {
     event.preventDefault();
@@ -57,5 +45,3 @@ $(function() {
     });
   });
 });
-
-
