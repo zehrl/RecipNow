@@ -19,6 +19,31 @@ $(function() {
     });
   });
 
+
+
+
+
+
+  $("#updateButton").on("click", function(event){
+    event.preventDefault();
+
+    var id = $(this).data("id");
+
+    $.ajax("/api/recipes/" + id, {
+      type: "PUT",
+    }).then(function() {
+      console.log("recipe has been updated");
+      location.reload();
+    });
+  });
+
+
+
+
+
+
+
+
   $("#deleteButton").on("click", function(event) {
     event.preventDefault();
 
