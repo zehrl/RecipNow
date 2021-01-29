@@ -26,7 +26,7 @@
                 </button>
               </div>
               <div class="modal-body">
-                
+
                 <form class="signup" action="/signup" method="post">
                   <div class="form-group">
                     <label for="type">User Name:</label>
@@ -57,13 +57,13 @@
 
                   <div class="form-group">
                     <label for="">Password:</label>
-                    <input type="password" placeholder="Password" id="signupPassword password-input" name="password" class="form-control"
-                      required>
+                    <input type="password" placeholder="Password" id="signupPassword password-input" name="password"
+                      class="form-control" required>
                     <label for="">Re-type Password:</label>
                     <input type="password" placeholder="Confirm Password" id="confirm_password password-input"
                       class="form-control" required>
                   </div>
-                  
+
                   <div class="form-group">
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -100,18 +100,18 @@
                 </button>
               </div>
               <div class="modal-body">
-                
-                <form class="login">
+
+                <form class="login" action="/login" method="post">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email Address:</label>
-                    <input type="email" class="form-control" id="loginInputEmail email-input"
+                    <input type="email" name="email" class="form-control" id="loginInputEmail email-input"
                       placeholder="Email Address" aria-describedby="emailHelp" required>
                     <small id="emailHelp" class="form-text text-muted"></small>
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Password:</label>
-                    <input type="password" placeholder="Password" id="loginPassword password-input" class="form-control"
-                      required>
+                    <input type="password" name="password" placeholder="Password" id="loginPassword password-input"
+                      class="form-control" required>
                   </div>
                   <div class="form-group form-check">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -124,6 +124,10 @@
                   <button type="submit" class="btn btn-success pure-button pure-button-primary btn-lg btn-block "
                     id="loginForm">Log
                     In</button>
+
+
+
+
 
                 </form>
               </div>
@@ -158,26 +162,26 @@
             <h1>{{this.name}}</h1>
           </a>
         </h4>
-    </div>
+      </div>
 
-    <div id="collapse{{id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{id}}">
-      <div class="row">
-        <div class="card card-body" style="background-color: rgb(212, 212, 212);">
-          <h5>ingredients</h5>
-          <p>
-            {{this.ingredient}}
-          </p>
-        </div>
-        <div class="card card-body" style="background-color: rgb(212, 212, 212);">
-          <h5>Directions</h5>
-          <p>
-            {{this.instruction}}
-          </p>
+      <div id="collapse{{id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{id}}">
+        <div class="row">
+          <div class="card card-body" style="background-color: rgb(212, 212, 212);">
+            <h5>ingredients</h5>
+            <p>
+              {{this.ingredient}}
+            </p>
+          </div>
+          <div class="card card-body" style="background-color: rgb(212, 212, 212);">
+            <h5>Directions</h5>
+            <p>
+              {{this.instruction}}
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 {{/each}}
 
