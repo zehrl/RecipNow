@@ -24,8 +24,9 @@ $(function() {
 
     var id = $(this).data("id");
 
-    $.ajax("/api/recipes/" + id, {
+    $.ajax("/api/recipes/" , {
       type: "PUT",
+      data: id
     }).then(function() {
       console.log("recipe has been updated");
       location.reload();
@@ -45,3 +46,5 @@ $(function() {
     });
   });
 });
+
+
