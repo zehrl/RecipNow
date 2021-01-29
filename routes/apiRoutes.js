@@ -57,9 +57,9 @@ router.put("/api/recipes", (req, res) => {
 // ------------ Search Route(s) ------------
 
 // Search query for recipe name & ingredients?
-router.get(("/api/search"), (req, res) => {
+router.get(("/search"), (req, res) => {
 
-    console.log(req.query.search)
+    console.log(req.query.ingredient)
 
     db.Recipes.findAll({
         attributes: [
@@ -74,7 +74,7 @@ router.get(("/api/search"), (req, res) => {
 
             ingredient:
             {
-                [Op.like]: `%${req.query.search}%`
+                [Op.like]: `%${req.query.ingredient}%`
             }
         },
 
@@ -90,7 +90,19 @@ router.get(("/api/search"), (req, res) => {
     }).then((data, err) => {
         
         // change to res.render with correctly structured object for handlebars
-        err ? res.json(err) : res.json(data)
+        // err ? res.json(err) : res.json(data)
+
+        if (err) {
+            res.json(err)
+        } else {
+
+            // if query is succesful, render homepage/signup and return query results
+            queryResults = {
+                results: data
+            }
+
+            res.render("signup", queryResults)
+        }
     })
 
 })
