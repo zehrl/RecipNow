@@ -1,4 +1,5 @@
 // Requiring our models and passport as we've configured it
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 const db = require("../models");
 const users = require("../models/users");
 const router = require("express").Router();
@@ -20,17 +21,21 @@ const router = require("express").Router();
 // })
 
 // create recipe route
-router.post("/api/recipes", (req, res) => {
+// user must be logged into account and only adds recipe for the signed in user
+router.post("/api/recipes", isAuthenticated, (req, res) => {
+
     db.Recipes.create({
         name: req.body.name,
         ingredient: req.body.ingredient,
         instruction: req.body.instruction,
-
-        // ***UserId should be pulled using "req.user.UserId" when login stuff is figured out***
-        UserId: req.body.userId
+        UserId: req.user.id
     }).then((data, err) => {
-        if (err) throw err
-        res.json(data);
+        if (err) {
+            throw err
+        } else {
+            // return res.json(data) to confirm success
+            res.json(data);
+        }
     })
 })
 
