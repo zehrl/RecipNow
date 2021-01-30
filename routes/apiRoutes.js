@@ -104,7 +104,17 @@ router.get(("/search"), (req, res) => {
             // console.log("data = ", data)
             console.log("hbsData = ", hbsData)
 
-            res.render("signup", { results: hbsData })
+            // if logged in, render the home page with search results
+            if (req.user) {
+
+                res.render("home", { results: hbsData })
+
+            } else { // if logged out, render the signup page with search results
+
+                res.render("signup", { results: hbsData })
+
+            }
+
         }
     })
 
