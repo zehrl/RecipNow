@@ -7,9 +7,8 @@
         <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav">
 
-
                 <a href="#">
-                    <img alt="profilepic" src="./public/assets/pictures/avatar-gratuit.png" width="75" height="50">
+                    <img alt="profilepic" src="/assets/pictures/avatar-gratuit.png" width="75" height="50">
                 </a>
 
                 <a href="/logout"><button class=" m-2 btn btn-outline-dark navButton">Log Out</button></a>
@@ -35,19 +34,19 @@
 
             <div class="form-group">
                 <label for="exampleFormControlTextarea1" class="text-white">Recipe Name:</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1 ingredients" rows="3"></textarea>
+                <textarea class="form-control" id="recipeName" rows="3"></textarea>
             </div>
             <div class="form-group">
                 <label for="exampleFormControlTextarea1" class="text-white">Ingredients:</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1 ingredients" rows="3"></textarea>
+                <textarea class="form-control" id="ingredients" rows="3"></textarea>
             </div>
 
             <div class="form-group">
                 <label for="exampleFormControlTextarea1" class="text-white">Instructions:</label>
-                <textarea class="form-control" id=" exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="instructions" rows="3"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-outline-success saveButton">Save</button>
+            <button type="submit" class="btn btn-outline-success" id="saveButton">Save</button>
         </form>
     </div>
 </div>
@@ -62,7 +61,7 @@
                 <div class="col-sm">
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1" class="text-white">Recipe Name:</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1 ingredients" rows="1">{{name}}</textarea>
+                        <textarea class="form-control" rows="1" id="name{{id}}">{{name}}</textarea>
                     </div>
                 </div>
             </div>
@@ -70,19 +69,21 @@
                 <div class="col-sm">
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1" class="text-white">Ingredients:</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1 ingredients" rows="3">{{ingredient}}</textarea>
+                        <textarea class="form-control" id="ingredient{{id}}" rows="3">{{ingredient}}</textarea>
                     </div>
                 </div>
                 <div class="col-sm">
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1" class="text-white">Instructions:</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1 ingredients" rows="3">{{instruction}}</textarea>
+                        <textarea class="form-control" id="instruction{{id}}" rows="3">{{instruction}}</textarea>
                     </div>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
-                <button type="button" class="btn btn-outline-success mr-5 mb-5 updateButton">Update</button>
-                <button type="button" class="btn btn-outline-danger mr-5 mb-5 deleteButton">Delete</button>
+                <button type="button" data-recipeid="{{id}}"
+                    class="btn btn-outline-success mr-5 mb-5 updateButton">Update</button>
+                <button type="button" data-recipeid="{{id}}"
+                    class="btn btn-outline-danger mr-5 mb-5 deleteButton">Delete</button>
             </div>
         </div>
     </div>

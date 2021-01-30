@@ -7,18 +7,43 @@
 - [Contributing](#Contributing)
 - [Credits](#Credits)
 - [Questions](#Questions)
+- [Screenshots](#Screenshots)
 
 ## Description
-* This app is a recipe sharing app that allows users to post, share and delete recipe
+RecipNow! is a recipe sharing app that allows users to 
+* view recipes that other user post
+* create accounts on the app.
+* login to use the accessible features provided
+* change their passwords for login credentials (Future Development)
+* create and post recipes
+* edit recipes they have posted
+* delete recipes they have posted
+* comment on recipes posted (Future Development)
+* get email notfications when another user comments on their post (Future Development)
+* show reaction to a posted recipe by upvoting or downvoting (Future Development)
+
+
+
 
 ## Installations
 
-* npm init -y
-* npm i inquirer 
-* npm i mysql
+* npm i bcryptjs
 * npm i express
 * npm i express-handlebars
-* npm i require-stack
+* npm i express-session
+* npm i handlebars
+* npm i mysql2"
+* npm i passport
+* npm i passport-local
+* npm i sequelize
+* npm i chai
+* npm i chai-http
+* npm i cross-env
+* npm i eslint
+* npm i eslint-config-prettier
+* npm i eslint-plugin-prettier
+* npm i mocha
+* npm i prettier
 
 ## Contributing
 A work in progress. And the possibilities are endless. <br> Please feel free to submit any code updates for review and acceptance.
@@ -29,7 +54,8 @@ A work in progress. And the possibilities are endless. <br> Please feel free to 
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Test
-Insert Link here
+Live Demo 
+https://rocky-peak-18836.herokuapp.com/
 
 ## Credits
 Hat tip to 
@@ -42,4 +68,8 @@ Hat tip to
 
 ## Questions
 please feel free to ask any questions.
+## Screenshots
+![Login](public/assets/pictures/RecipNow1.gif) <br> <br> <br>
+![Create account](public/assets/pictures/RecipNow2.gif)
+
 
