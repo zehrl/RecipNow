@@ -44,6 +44,11 @@ router.get("/profile", isAuthenticated, (req, res) => {
 
         }).then((data, err) => {
 
+            // Map sequalize object into handlebars friendly
+            data[0].Recipes = data[0].Recipes.map(element => {
+                return element.dataValues
+            })
+
             // Parse data from database into handlebars friendly object
             const hbsData = {
                 username: data[0].username,
@@ -51,6 +56,9 @@ router.get("/profile", isAuthenticated, (req, res) => {
                 lastName: data[0].lastName,
                 recipes: data[0].Recipes
             }
+
+            // console.log(hbsData.recipes);
+            // console.log(hbsData.recipes);
 
             res.render("profile", hbsData)
 
