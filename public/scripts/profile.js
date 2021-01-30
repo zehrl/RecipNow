@@ -1,46 +1,65 @@
-$(function() {
-  $(".saveButton").on("submit", function(event) {
-    event.preventDefault();
+console.log("profile.js")
+
+$(function () {
+  $("#saveButton").on("click", function (event) {
+    // event.preventDefault();
 
     var newRecipe = {
-      name: $("#recipename")
+      name: $("#recipeName")
+
         .val()
         .trim(),
       ingredient: $("#ingredients").val(),
-      instruction: $("#instructions"),
+
+      instruction: $("#instructions").val(),
     };
 
     $.ajax("/api/recipes", {
       type: "POST",
       data: newRecipe,
-    }).then(function() {
+    }).then(function () {
       console.log("added a new recipe", newRecipe);
       location.reload();
     });
   });
 
-  $("#updateButton").on("click", function(event) {
-    event.preventDefault();
+  $(".updateButton").on("click", function (event) {
+    // event.preventDefault();
 
-    var id = $(this).data("id");
+    var id = $(this).data("recipeid");
 
-    $.ajax("/api/recipes/" , {
+    const ingredients = $("#ingredient" + id).val();
+    const instructions = $("#instruction" + id).val();
+    const name = $("#name" + id).val();
+
+    console.log(instructions);
+
+    const recipeData = {
+      id: id,
+      ingredients: ingredients,
+      instructions: instructions,
+      name: name
+    }
+
+    $.ajax("/api/recipes/", {
       type: "PUT",
-      data: id
-    }).then(function() {
+      data: recipeData
+    }).then(function () {
       console.log("recipe has been updated");
       location.reload();
     });
   });
 
-  $("#deleteButton").on("click", function(event) {
-    event.preventDefault();
+  $(".deleteButton").on("click", function (event) {
+    // event.preventDefault();
 
-    var id = $(this).data("id");
+    var id = $(this).data("recipeid");
+
+    // console.log(id)
 
     $.ajax("/api/recipes/" + id, {
-      type: "DELETE",
-    }).then(function() {
+      type: "DELETE"
+    }).then(function () {
       console.log("recipe has been deleted");
       location.reload();
     });
