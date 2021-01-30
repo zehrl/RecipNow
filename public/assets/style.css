@@ -109,8 +109,9 @@ padding-bottom:50px;*/
 
 .card {
   color: white;
-  border-right: solid;
-}
+  border-right:solid;
+  border-width: thin;
+  }
   
 
 
