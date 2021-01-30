@@ -28,9 +28,11 @@ $(function () {
 
     var id = $(this).data("recipeid");
 
-    const ingredients = "IT UPDATED!";
-    const instructions = "IT UPDATED!";
-    const name = "IT UPDATED!";
+    const ingredients = $("#ingredient" + id).val();
+    const instructions = $("#instruction" + id).val();
+    const name = $("#name" + id).val();
+
+    console.log(instructions);
 
     const recipeData = {
       id: id,
