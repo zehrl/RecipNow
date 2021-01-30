@@ -7,7 +7,11 @@ if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection({
         host: "localhost",
         user: "root",
+<<<<<<< HEAD
+        password: "DB_pass",
+=======
         password: process.env.DB_PASS,
+>>>>>>> frontend
         database: "recipnowDB"
     });
 };
