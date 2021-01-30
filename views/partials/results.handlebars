@@ -1,0 +1,30 @@
+<div class="wrapper center-block">
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading{{id}}">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        href="#collapse{{id}}" aria-expanded="false" aria-controls="collapse{{id}}">
+                        <h1>{{recipename}}</h1>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse{{id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{id}}">
+                <div class="row">
+                    <div class="card card-body" style="background-color: rgb(212, 212, 212);">
+                        <h5>ingredients</h5>
+                        <p>
+                            {{ingredients}}
+                        </p>
+                    </div>
+                    <div class="card card-body" style="background-color: rgb(212, 212, 212);">
+                        <h5>Directions</h5>
+                        <p>
+                            {{directions}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
