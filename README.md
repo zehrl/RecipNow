@@ -69,6 +69,7 @@ Hat tip to
 ## Questions
 please feel free to ask any questions.
 ## Screenshots
-![Day-Planner Demo](public/assets/pictures/RecipNow1.gif)
+![Login](public/assets/pictures/RecipNow1.gif) <br> <br> <br>
+![Create account](public/assets/pictures/RecipNow2.gif)
 
 

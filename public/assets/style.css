@@ -117,3 +117,9 @@ padding-bottom:50px;*/
 img {
   border-radius: 50%;
 }
+
+
+.form-control{
+  background-color: rgb(5, 5, 5);
+  color:honeydew;
+}
