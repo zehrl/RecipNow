@@ -20,8 +20,9 @@ router.post("/api/recipes", isAuthenticated, (req, res) => {
         if (err) {
             throw err
         } else {
-            // return res.json(data) to confirm success
-            res.json(data);
+
+            // When successful, redirect to profile to load new recipe
+            res.redirect("/profile")
         }
     })
 })

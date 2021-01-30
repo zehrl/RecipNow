@@ -35,6 +35,7 @@ router.get("/profile", isAuthenticated, (req, res) => {
             include: {
                 model: db.Recipes,
                 attributes: [
+                    "id",
                     "name",
                     "ingredient",
                     "instruction",
@@ -56,9 +57,6 @@ router.get("/profile", isAuthenticated, (req, res) => {
                 lastName: data[0].lastName,
                 recipes: data[0].Recipes
             }
-
-            // console.log(hbsData.recipes);
-            // console.log(hbsData.recipes);
 
             res.render("profile", hbsData)
 
