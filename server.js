@@ -2,6 +2,7 @@
 const express = require("express");
 const session = require("express-session");
 const exphbs  = require('express-handlebars');
+const dotenv = require('dotenv').config();
 
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
@@ -24,16 +25,14 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+const apiRoutes = require("./routes/apiRoutes");
 const authRoutes = require("./routes/authRoutes");
 const hbsRoutes = require("./routes/hbsRoutes");
-const recipesRoutes = require("./routes/recipesRoutes");
-const usersRoutes = require("./routes/usersRoutes");
 
 app.use(
+  apiRoutes,
   authRoutes,
-  hbsRoutes,
-  recipesRoutes,
-  usersRoutes
+  hbsRoutes
 );
 
 // Setup server for handlebars
@@ -50,3 +49,6 @@ db.sequelize.sync().then(() => {
     );
   });
 });
+
+
+
