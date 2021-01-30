@@ -1,5 +1,6 @@
 body {
     background-color: rgb(22, 22, 22);
+    margin: 20px 0px 2px 20px;
   }
 
   .navButton {
@@ -129,4 +130,25 @@ img {
 .form-control{
   background-color: rgb(5, 5, 5);
   color:honeydew;
+}
+
+
+
+.glow {
+  font-size: 30px;
+  color: rgb(22, 22, 22);
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px #ffffff, 0 0 40px #3cff00, 0 0 50px #3cff00, 0 0 60px #3cff00, 0 0 70px #3cff00;
+  }
+  
+  to {
+    text-shadow: 0 0 20px rgb(247, 245, 245), 0 0 30px #3cff00, 0 0 40px #3cff00, 0 0 50px #3cff00, 0 0 60px #3cff00, 0 0 70px #3cff00, 0 0 80px #3cff00;
+  }
 }
