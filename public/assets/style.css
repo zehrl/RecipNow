@@ -134,9 +134,11 @@ img {
 
 
 
-.glow {
+
+
+.homeTittle {
   font-size: 30px;
-  color: rgb(22, 22, 22);
+  color: rgb(248, 247, 247);
   text-align: center;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
@@ -145,10 +147,10 @@ img {
 
 @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 10px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px #ffffff, 0 0 40px #3cff00, 0 0 50px #3cff00, 0 0 60px #3cff00, 0 0 70px #3cff00;
+    text-shadow: 0 0 10px rgb(75, 75, 75), 0 0 20px rgb(75, 75, 75), 0 0 30px rgb(75, 74, 74), 0 0 20px rgb(75, 74, 74), 0 0 50px  rgb(75, 74, 74), 0 0 60px rgb(75, 74, 74), 0 0 70px  rgb(75, 74, 74);
   }
   
   to {
-    text-shadow: 0 0 20px rgb(247, 245, 245), 0 0 30px #3cff00, 0 0 40px #3cff00, 0 0 50px #3cff00, 0 0 60px #3cff00, 0 0 70px #3cff00, 0 0 80px #3cff00;
+    text-shadow: 0 0 20px rgb(125, 255, 65), 0 0 30px  rgb(80, 252, 1), 0 0 40px rgb(126, 255, 67), 0 0 50px rgb(80, 252, 1), 0 0 60px  rgb(117, 255, 53), 0 0 70px rgb(80, 252, 1), 0 0 80px  rgb(80, 252, 1);
   }
 }
