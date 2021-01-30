@@ -29,7 +29,6 @@ const apiRoutes = require("./routes/apiRoutes");
 const authRoutes = require("./routes/authRoutes");
 const hbsRoutes = require("./routes/hbsRoutes");
 
-
 app.use(
   apiRoutes,
   authRoutes,

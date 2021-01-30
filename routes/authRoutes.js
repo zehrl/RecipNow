@@ -17,7 +17,7 @@ router.post("/signup", (req, res) => {
     email: req.body.email
   })
     .then((data) => {
-      res.render("home")
+      res.render("signup")
     })
     .catch(err => {
       res.status(401).json(err);
