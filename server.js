@@ -2,6 +2,7 @@
 const express = require("express");
 const session = require("express-session");
 const exphbs  = require('express-handlebars');
+const dotenv = require('dotenv').config();
 
 // Requiring passport as we've configured it
 const passport = require("./config/passport");
@@ -48,3 +49,6 @@ db.sequelize.sync().then(() => {
     );
   });
 });
+
+
+

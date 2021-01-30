@@ -1,7 +1,11 @@
 {
   "development": {
     "username": "root",
+<<<<<<< HEAD
+    "password": "DB_pass",
+=======
     "password": "password",
+>>>>>>> 32cbcf79eab9adbaa9397fcda09419bab32d26c5
     "database": "recipnowDB",
     "host": "127.0.0.1",
     "dialect": "mysql"
