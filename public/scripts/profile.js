@@ -1,48 +1,52 @@
-$(function() {
-  $(".saveButton").on("submit", function(event) {
-    event.preventDefault();
+console.log("profile.js")
+
+$(function () {
+  $("#saveButton").on("click", function (event) {
+    // event.preventDefault();
 
     var newRecipe = {
-      name: $("#recipename")
+      name: $("#recipeName")
+
         .val()
         .trim(),
       ingredient: $("#ingredients").val(),
-      instruction: $("#instructions"),
+
+      instruction: $("#instructions").val(),
     };
 
     $.ajax("/api/recipes", {
       type: "POST",
       data: newRecipe,
-    }).then(function() {
+    }).then(function () {
       console.log("added a new recipe", newRecipe);
       location.reload();
     });
   });
 
-  $("#updateButton").on("click", function(event) {
+  $("#updateButton").on("click", function (event) {
     event.preventDefault();
 
     var id = $(this).data("id");
 
-    $.ajax("/api/recipes/" , {
+    $.ajax("/api/recipes/", {
       type: "PUT",
       data: id
-    }).then(function() {
+    }).then(function () {
       console.log("recipe has been updated");
-      location.reload();
+      // location.reload();
     });
   });
 
-  $("#deleteButton").on("click", function(event) {
+  $("#deleteButton").on("click", function (event) {
     event.preventDefault();
 
     var id = $(this).data("id");
 
     $.ajax("/api/recipes/" + id, {
       type: "DELETE",
-    }).then(function() {
+    }).then(function () {
       console.log("recipe has been deleted");
-      location.reload();
+      // location.reload();
     });
   });
 });
