@@ -28,10 +28,10 @@ router.post("/api/recipes", isAuthenticated, (req, res) => {
 })
 
 // delete recipe by id route
-router.delete("/api/recipes/", (req, res) => {
+router.delete("/api/recipes/:id", (req, res) => {
     db.Recipes.destroy({
         where: {
-            id: req.body.id
+            id: req.params.id
         }
     }).then((data, err) => {
         if (err) throw err
@@ -44,7 +44,8 @@ router.put("/api/recipes", (req, res) => {
 
     db.Recipes.update({
         ingredient: req.body.ingredients,
-        instruction: req.body.instructions
+        instruction: req.body.instructions,
+        name: req.body.name
     }, {
         where: {
             id: req.body.id

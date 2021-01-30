@@ -23,30 +23,43 @@ $(function () {
     });
   });
 
-  $("#updateButton").on("click", function (event) {
-    event.preventDefault();
+  $(".updateButton").on("click", function (event) {
+    // event.preventDefault();
 
-    var id = $(this).data("id");
+    var id = $(this).data("recipeid");
+
+    const ingredients = "IT UPDATED!";
+    const instructions = "IT UPDATED!";
+    const name = "IT UPDATED!";
+
+    const recipeData = {
+      id: id,
+      ingredients: ingredients,
+      instructions: instructions,
+      name: name
+    }
 
     $.ajax("/api/recipes/", {
       type: "PUT",
-      data: id
+      data: recipeData
     }).then(function () {
       console.log("recipe has been updated");
-      // location.reload();
+      location.reload();
     });
   });
 
-  $("#deleteButton").on("click", function (event) {
-    event.preventDefault();
+  $(".deleteButton").on("click", function (event) {
+    // event.preventDefault();
 
-    var id = $(this).data("id");
+    var id = $(this).data("recipeid");
+
+    // console.log(id)
 
     $.ajax("/api/recipes/" + id, {
-      type: "DELETE",
+      type: "DELETE"
     }).then(function () {
       console.log("recipe has been deleted");
-      // location.reload();
+      location.reload();
     });
   });
 });
