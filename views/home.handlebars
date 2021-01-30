@@ -8,10 +8,10 @@
             <div class="navbar-nav">
 
 
-                <a href="/profile">
-                    <img alt="profilepic" src="./public/assets/pictures/avatar-gratuit.png" width="75" height="50">
-                </a>
-
+                {{!-- <a href="/profile">
+                    <img alt="profilepic" src="/assets/pictures/avatar-gratuit.png" width="75" height="50">
+                </a> --}}
+                <a href="/profile"><button class=" m-2 btn btn-outline-dark navButton">Create/Edit Recipe</button></a>
                 <a href="/logout"><button class=" m-2 btn btn-outline-dark navButton">Log Out</button></a>
 
             </div>
@@ -21,20 +21,56 @@
 <!-- jumbotron -->
 
 <div class="jumbotron jumbotron-fluid mb-5 d-flex justify-content-center jumbotron-billboard">
-    <div class="input-group  w-50 ">
-        <input class="form-control form-control-lg rounded-start" type="text" placeholder="Search Recipe Here">
-        <button class="btn btn-success rounded-end " type="button" id="button-addon2">Search</button>
+  <div class="input-group  w-50 ">
+    <input class="form-control form-control-lg rounded-start" type="text" placeholder="Search Recipe Here"
+      id="search-result">
+    <button class="btn btn-success rounded-end " type="button" id="searchButton">Search</button>
+  </div>
+</div>
+
+{{!-- Search Results --}}
+
+{{#each results}}
+<div class="wrapper center-block">
+
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="heading{{id}}">
+                <h4 class="panel-title">
+                    <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion"
+                        href="#collapse{{id}}" aria-expanded="false" aria-controls="collapse{{id}}">
+                        <h1>{{this.name}}</h1>
+                    </a>
+                </h4>
+            </div>
+
+            <div id="collapse{{id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading{{id}}">
+                <div class="row">
+                    <div class="card card-body" style="background-color: rgb(212, 212, 212);">
+                        <h5>ingredients</h5>
+                        <p>
+                            {{this.ingredient}}
+                        </p>
+                    </div>
+                    <div class="card card-body" style="background-color: rgb(212, 212, 212);">
+                        <h5>Directions</h5>
+                        <p>
+                            {{this.instruction}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<div>
-    {{results}}
-</div>
+{{/each}}
 
 
 
 <!-- footer -->
 
-<footer class="page-footer font-small blue d-flex justify-content-center footer">
-    <div class="footerBottom py-3">
-        <p class="footerColor"> Made by Group Two</p>
+<footer>
+  <p style="color: rgb(0, 255, 55); font-size: 15px; text-align: center;">“I cook with wine. Sometimes I even add it to the food.” – W.C. Fields </p>
+  <p style="color: rgb(0, 255, 55); font-size: 15px; text-align: center;">“Made by Group Two" </p>
 </footer>
